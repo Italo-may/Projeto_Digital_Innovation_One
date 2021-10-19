@@ -1,0 +1,88 @@
+O link para download do git: https://git-scm.com/downloads
+
+Lista de comandos do Git
+
+Geral
+  git help
+Comando específico
+  git help add
+  git help commit
+  git help <qualquer_comando_git>
+Setar usuário
+  git config --global user.name "Leonardo Comelli"
+Setar email
+  git config --global user.email leonardo@software-ltda.com.br
+Editor Setar
+  git config --global core.editor vim
+Setar ferramenta de merge
+  git config --global merge.tool vimdiff
+Setar arquivos a serem ignorados
+  git config --global core.excludesfile ~/.gitignore
+Listar configurações
+  git config --list
+Criar novo repositório
+  git init
+Verificar estado dos arquivos / diretórios
+  git status
+Adicionar arquivo / diretório (área preparada)
+Adicionar um arquivo em específico
+  git add meu_arquivo.txt
+Adicionar um diretório em específico
+  git add meu_diretorio
+Adicionar todos os arquivos / diretórios
+  git add .	
+Adicionar um arquivo que esta listado no .gitignore (geral ou do repositório)
+  git add -f arquivo_no_gitignore.txt
+Comitar arquivo / diretório
+Comitar um arquivo
+  git commit meu_arquivo.txt
+Comitar vários arquivos
+  git commit meu_arquivo.txt meu_outro_arquivo.txt
+Comitar informando mensagem
+  git commit meuarquivo.txt -m "minha mensagem de commit"
+Remover arquivo / diretório
+Removedor de arquivo
+  git rm meu_arquivo.txt
+Removedor de pasta
+  git rm -r diretorio
+Visualizar histórico
+Exibir histórico
+  git log
+Exibir histórico com diferenças das duas últimas mudanças
+  git log -p -2
+Exibir resumo do histórico (hash completa, autor, dados, comentário e qtde de mudanças (+/-))
+  git log --stat
+Exibir informações resumidas em uma linha (hash completa e comentário)
+  git log --pretty=oneline
+Exibir histórico com formatação específica (hash abreviada, autor, dados e comentário)
+  git log --pretty=format:"%h - %an, %ar : %s"
+% h: Abreviação do hash;
+% an: Nome do autor;
+% ar: Dados;
+% s: Comentário.
+Verifique como demais opções de formatação no livro Git
+
+Exibir histório de um arquivo específico
+  git log -- <caminho_do_arquivo>
+Exibir histórico de um arquivo específico que definir uma palavra fornecida
+  git log --summary -S<palavra> [<caminho_do_arquivo>]
+Exibir modificação histórico de um arquivo
+  git log --diff-filter=M -- <caminho_do_arquivo>
+O pode ser substituido por: Escrito (A), Copiado (C), Apagado (D), Modificado (M), Renomeado (R), entre outros.
+Exibir histório de um determinado autor
+  git log --author=usuario
+Exibir revisão e autor da última modificação de uma bloco de linhas
+  git blame -L 12,22 meu_arquivo.txt 
+Repositório Remoto
+Exibir os repositórios remotos
+  git remote
+
+  git remote -v
+Vincular repositório local com um repositório remoto
+  git remote add origin git@github.com:leocomelli/curso-git.git
+Exibir informações dos repositórios remotos
+  git remote show origin
+Renomear um repositório remoto
+  git remote rename origin curso-git
+Desvincular um repositório remoto
+  git remote rm curso-git
